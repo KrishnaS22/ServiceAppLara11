@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
@@ -24,6 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::group(['middleware' => ['role:admin']], function () {
         Route::resource('services', ServiceController::class);
         Route::resource('staffs', StaffController::class);
+        Route::resource('admins', AdminController::class);
     });
     Route::group(['middleware' => ['role:admin|staff|user']], function () {
         Route::resource('complaints', ComplaintController::class);

@@ -22,6 +22,9 @@
                         <x-nav-link :href="route('staffs.index')" :active="request()->routeIs('staffs.index')">
                             {{ __('Staffs') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('admins.index')" :active="request()->routeIs('admins.index')">
+                            {{ __('Admins') }}
+                        </x-nav-link>
                     @endrole
                     <x-nav-link :href="route('complaints.index')" :active="request()->routeIs('complaints.index')">
                         {{ __('Complaints') }}
